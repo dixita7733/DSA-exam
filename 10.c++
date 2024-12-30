@@ -67,6 +67,7 @@ public:
         viewtasks();
     }
 
+   //delete function
     void deletingtask(int delp) {
         if (delp < 0 || delp >= v3.size()) {
             cout << "Invalid index for deletion!" << endl;
@@ -87,10 +88,11 @@ public:
         viewtasks();
     }
 
+   //jitne task nahi hua uska function matlab us task me bool true nhi hua hoga
     void remainingtask() {
         cout << "Remaining Tasks: " << endl;
         for (int i = 0; i < v3.size(); i++) {
-            if (!completed[i]) {
+            if (!completed[i]) { //here completed bool is not true so display that all task
                 cout << i << ": " << v3[i] << endl;
             }
         }
@@ -98,8 +100,10 @@ public:
 };
 
 int main() {
+    //create an object
     ToDoList obj;
 
+    //menu list
     cout << "1: Insert Task" << endl;
     cout << "2: View Tasks" << endl;
     cout << "3: Mark Task as Completed" << endl;
@@ -124,11 +128,13 @@ int main() {
                 cout << "Enter the task to insert: ";
                 cin >> invalue;
 
+                //call function of addingtask
                 obj.addingtask(innum, invalue);
                 break;
             }
 
             case 2:
+                //call function of view task
                 obj.viewtasks();
                 break;
 
@@ -138,6 +144,7 @@ int main() {
                 cout << "Enter the index of the task to mark as completed: ";
                 cin >> upnum;
 
+                //call function of completed task
                 obj.markcompletedtask(upnum);
                 break;
             }
@@ -148,11 +155,13 @@ int main() {
                 cout << "Enter the index to delete: ";
                 cin >> delp;
 
+               //call function of deleteing task
                 obj.deletingtask(delp);
                 break;
             }
 
             case 5:
+                //call function of remaining task
                 obj.remainingtask();
                 break;
 
